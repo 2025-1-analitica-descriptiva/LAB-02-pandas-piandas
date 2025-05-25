@@ -15,3 +15,9 @@ def pregunta_01():
     40
 
     """
+
+    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    return len(df0)
+
+resultado = pregunta_01()
+print(resultado)
