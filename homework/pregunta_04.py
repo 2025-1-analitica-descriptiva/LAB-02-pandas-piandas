@@ -23,6 +23,8 @@ def pregunta_04():
     """
 
     df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    promedios = df0.groupby('c1')['c2'].mean()
+    return promedios
 
 resultado = pregunta_04()
 print(resultado)

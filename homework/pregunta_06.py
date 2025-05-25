@@ -17,7 +17,8 @@ def pregunta_06():
 
     """
 
-    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    df1 = pd.read_csv('files/input/tbl1.tsv', sep='\t')
+    return sorted(df1['c4'].str.upper().unique())
 
 resultado = pregunta_06()
 print(resultado)

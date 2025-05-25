@@ -23,6 +23,8 @@ def pregunta_05():
     """
 
     df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    maximo = df0.groupby('c1')['c2'].max()
+    return maximo
 
 resultado = pregunta_05()
 print(resultado)
