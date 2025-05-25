@@ -23,3 +23,8 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
+
+    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+
+resultado = pregunta_12()
+print(resultado)

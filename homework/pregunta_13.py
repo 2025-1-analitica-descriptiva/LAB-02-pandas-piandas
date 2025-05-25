@@ -21,3 +21,8 @@ def pregunta_13():
     E    275
     Name: c5b, dtype: int64
     """
+
+    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+
+resultado = pregunta_13()
+print(resultado)

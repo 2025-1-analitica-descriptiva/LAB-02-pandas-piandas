@@ -22,3 +22,10 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+
+    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    conteos = df0['c1'].value_counts().sort_index()
+    return conteos
+
+resultado = pregunta_03()
+print(resultado)
