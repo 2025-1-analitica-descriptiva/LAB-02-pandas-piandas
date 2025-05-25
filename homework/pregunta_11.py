@@ -24,7 +24,17 @@ def pregunta_11():
     39   39    a,d,f
     """
 
-    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    df1 = pd.read_csv('files/input/tbl1.tsv', sep='\t')
+
+    df1 = df1.sort_values(['c0', 'c4'])
+
+    resultado = (
+        df1
+        .groupby('c0')['c4']
+        .agg(','.join)
+        .reset_index()
+    )
+    return resultado
 
 resultado = pregunta_11()
 print(resultado)

@@ -25,6 +25,8 @@ def pregunta_08():
     """
 
     df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    df0['suma'] = df0['c0'] + df0['c2']
+    return df0
 
 resultado = pregunta_08()
-print(resultado)
+print(resultado.head())

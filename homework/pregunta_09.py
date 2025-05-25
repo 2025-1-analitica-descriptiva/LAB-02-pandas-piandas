@@ -26,6 +26,8 @@ def pregunta_09():
     """
 
     df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    df0['year'] = df0['c3'].str.split('-', expand=True)[0]
+    return df0
 
 resultado = pregunta_09()
-print(resultado)
+print(resultado.head())

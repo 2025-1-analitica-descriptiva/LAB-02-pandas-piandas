@@ -23,6 +23,16 @@ def pregunta_10():
     """
 
     df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    
+    df0['c2'] = df0['c2'].astype(str)
+    
+    df0 = df0.sort_values(['c1', 'c2'])
+
+    series_unida = df0.groupby('c1')['c2'].agg(':'.join)
+    
+    convertido = series_unida.to_frame()
+
+    return convertido
 
 resultado = pregunta_10()
 print(resultado)
