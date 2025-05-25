@@ -24,7 +24,15 @@ def pregunta_12():
     39   39                    ggg:3,hhh:8,jjj:5
     """
 
-    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    df2 = pd.read_csv('files/input/tbl2.tsv', sep='\t')
+
+    df2['c5'] = df2['c5a'] + ':' + df2['c5b'].astype(str)
+
+    df2 = df2.sort_values(['c0', 'c5'])
+
+    df_final = df2.groupby('c0')['c5'].agg(','.join).reset_index()
+    return df_final
+
 
 resultado = pregunta_12()
 print(resultado)

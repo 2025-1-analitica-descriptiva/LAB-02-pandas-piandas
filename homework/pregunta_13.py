@@ -22,7 +22,14 @@ def pregunta_13():
     Name: c5b, dtype: int64
     """
 
-    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')[['c0', 'c1']]
+    df2 = pd.read_csv('files/input/tbl2.tsv', sep='\t')[['c0', 'c5b']]
+    
+    merged = pd.merge(df0, df2, on='c0')
+    
+    suma = merged.groupby('c1')['c5b'].sum()
+    
+    return suma
 
 resultado = pregunta_13()
 print(resultado)
