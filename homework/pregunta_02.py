@@ -17,6 +17,7 @@ def pregunta_02():
     """
     
     df0 = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+    return df0.shape[1]
 
 resultado = pregunta_02()
 print(resultado)
